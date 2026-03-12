@@ -1,0 +1,42 @@
+:root{
+  --bg:#0f1724; /* deep navy */
+  --card:#0b1220;
+  --accent:#7bd389; /* green */
+  --muted:#9aa6b2;
+  --light:#e6eef4;
+  --white-square:#f0d9b5;
+  --black-square:#b58863;
+}
+*{box-sizing:border-box;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial}
+body{margin:0;background:linear-gradient(180deg,#071021 0%,var(--bg) 100%);color:var(--light);min-height:100vh}
+.app-header{padding:18px 24px;font-size:20px;font-weight:700;background:linear-gradient(90deg,#071627,#0b1220);border-bottom:1px solid rgba(255,255,255,0.03)}
+.container{max-width:1100px;margin:28px auto;padding:0 18px}
+.panel{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+.hidden{display:none}
+.row{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+label{display:flex;flex-direction:column;font-size:13px;color:var(--muted)}
+input,select{padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:var(--light)}
+.btn{padding:8px 12px;border-radius:8px;border:0;background:transparent;color:var(--light);cursor:pointer}
+.btn.primary{background:linear-gradient(90deg,var(--accent),#43c59b);color:#00210b;font-weight:600}
+.btn.danger{background:#e25656;color:#fff}
+.muted{color:var(--muted);font-size:13px}
+.game-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.player-info{display:flex;flex-direction:column}
+.player-info.right{text-align:right}
+.status{font-weight:600;color:var(--muted)}
+.game-body{display:flex;gap:18px}
+.board{width:520px;height:520px;display:grid;grid-template-columns:repeat(8,1fr);grid-template-rows:repeat(8,1fr);border-radius:12px;overflow:hidden;border:6px solid rgba(255,255,255,0.03)}
+.square{display:flex;align-items:center;justify-content:center;font-size:30px;cursor:pointer;user-select:none}
+.square.light{background:var(--white-square)}
+.square.dark{background:var(--black-square)}
+.square.highlight{outline:4px solid rgba(123,211,137,0.28)}
+.sidebar{width:320px}
+.controls{display:flex;gap:8px;margin-bottom:12px}
+.moves{background:rgba(255,255,255,0.02);padding:10px;border-radius:8px;max-height:420px;overflow:auto}
+.moves ol{padding-left:18px;margin:0;color:var(--muted)}
+.clock{font-size:13px;color:var(--muted)}
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(rgba(2,6,23,0.6),rgba(2,6,23,0.6))}
+.modal-content{background:var(--card);padding:18px;border-radius:10px}
+.promo-options{display:flex;gap:8px}
+.promo-options button{padding:10px;border-radius:8px;background:rgba(255,255,255,0.03);border:0;color:var(--light);cursor:pointer}
+@media(max-width:900px){.game-body{flex-direction:column;align-items:center}.board{width:360px;height:360px}.sidebar{width:100%}}
